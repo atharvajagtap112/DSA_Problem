@@ -27,18 +27,19 @@ public class Binary_Tree_Postorder_Traversal {
                 cur=cur.left;
             }
             else {
-                TreeNode temp=cur;
-                if (cur==null){
-                    temp= stack.pop();
-                    ans.add(temp.val);
-                    while (!stack.isEmpty()&&temp==stack.peek().right){
-                        TreeNode node= stack.pop();
-                        temp=node;
-                        ans.add(node.val);
-                    }
+                TreeNode temp=stack.peek().right;
+                if (temp!=null){
+                      cur=temp;
                 }
-                else cur=temp;
-
+              else{
+                temp= stack.pop();
+                ans.add(temp.val);
+                while (!stack.isEmpty()&&temp==stack.peek().right){
+                    TreeNode node= stack.pop();
+                    temp=node;
+                    ans.add(node.val);
+                }
+            }
             }
         }
         return ans;

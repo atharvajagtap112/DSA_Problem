@@ -52,4 +52,9 @@ public class Articulation_Point_I {
         Collections.sort(ans);
         return ans;
     }
+
+
+    public static void main(String[] args) {
+     
+    }
 }
